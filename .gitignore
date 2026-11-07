@@ -9,7 +9,7 @@ __pycache__/
 .env
 
 # Data is downloaded by scripts/build_dataset.py and never committed
-data/
+/data/
 
 # OS / editors
 .DS_Store
