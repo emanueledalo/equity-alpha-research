@@ -19,7 +19,6 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
-docs = ["reportlab>=4", "pillow>=10"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

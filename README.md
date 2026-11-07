@@ -53,7 +53,6 @@ Placebo test: the selected configuration fed 50 sets of random scores earns a gr
 Full reports with figures: [data quality](reports/data_quality.md) · [signals](reports/signals.md) ·
 [single-signal evaluation](reports/evaluation.md) · [combination](reports/combination.md) ·
 [backtest](reports/backtest.md) · [robustness](reports/robustness.md) · [improvements](reports/improvements.md).
-A step-by-step explanation of every decision is in [docs/interview_guide.pdf](docs/interview_guide.pdf).
 
 ![improvements](reports/figures/imp_ladder.png)
 
@@ -103,11 +102,10 @@ would give, in closed form so it can be refitted every month.
 ```bash
 git clone https://github.com/emanueledalo/equity-alpha-research.git && cd equity-alpha-research
 python3 -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev,docs]"
+pip install -e ".[dev]"
 cp .env.example .env              # add a free Tiingo API key (needed for delisted stocks)
 python scripts/run_all.py         # data download is cached; first run takes hours on Tiingo's free tier
 pytest                            # unit tests
-python docs/build_guide.py        # regenerate the PDF guide from the latest results
 ```
 
 `python scripts/run_all.py --skip-data` reruns the research stages in about 90 seconds once the data is
@@ -128,7 +126,6 @@ src/alpha_research/
 scripts/                 one script per stage + run_all.py
 tests/                   pytest suite: look-ahead, timing, constraints, statistics, data rules
 reports/                 markdown reports, figures, results.json
-docs/                    interview_guide.pdf and its generator
 ```
 
 ## Limitations
